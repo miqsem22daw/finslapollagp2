@@ -1,0 +1,85 @@
+div {
+    margin: 20px;
+    
+}
+
+table {
+    width: 100%;
+}
+
+/* th {
+    padding: 50px;
+} */
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.mat-toolbar{
+  background-color:   #7bead4  ;
+}
+
+.mat-icon{
+  font-size: 25px;
+}
+
+.mat-button{
+  font-size: 22px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+}
+
+.example-button-row a {
+  margin-right: 8px;
+  font-size: 30px;
+}
+
+mat-grid-tile {
+  background:  #e4e5e3 ;
+}
+
+h1 {
+  font-size: 70px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  color: white  ;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: 'Open Sans';
+  padding: 8px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  color: white;
+  font-weight: bold;
+  line-height : 40px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+body{
+  background-color: white;
+}
+
+img{
+  display:block;
+  margin:auto;
+  width: 10%;
+}
+
+body {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*
+.container-fluid{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}*/

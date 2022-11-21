@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dades</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <table>
+        <td>
+            {{ primer[0].nomPais }}
+        </td>
+        <td>
+            {{ primer[0].poblacio }}
+        </td>
+        <td>
+            {{ primer[0].educacioPrimaria }}
+        </td>
+    </table> -->
+
+    <!-- <table>
+        <th>
+
+        </th>
+        <th *ngFor="let taula of primer">
+            {{ taula.serie }}
+        </th>
+        <tr *ngFor="let taula2 of paisos; let i = index">
+            <td>
+                {{ taula2[0].pais }}
+            </td>
+            <td *ngFor="let cont of taula2">
+                {{ cont.valor }}
+            </td>
+        </tr>
+    </table> -->
+    <mat-toolbar>
+        <mat-icon>home</mat-icon>
+        <a mat-button routerLink="/menu" routerLinkActive="active">Inici</a>
+        <mat-icon>storage</mat-icon>
+        <a mat-button routerLink="/dades" routerLinkActive="active">Dades</a>
+        <mat-icon> insert_chart</mat-icon>
+        <a mat-button routerLink="/grafics" routerLinkActive="active">Gràfics</a>
+    </mat-toolbar>
+    <div>
+        <mat-form-field>
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+        </mat-form-field>
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 demo-table">
+            <ng-container [matColumnDef]="k" *ngFor="let k of displayedColumns">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ k }} </th>
+                <td mat-cell *matCellDef="let element"> {{ element[k] }} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator #paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100, 218]">
+        </mat-paginator>
+    </div>
+</body>
+
+</html>

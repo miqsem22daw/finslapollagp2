@@ -19,8 +19,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 
+
 import { MenuComponent } from './menu.component';
 import { Global } from './global';
+import { PersoPipe } from './pipe';
+import { PipeRound } from './pipeRound';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { Global } from './global';
     TablePaginationExample,
     BarChartComponent,
     MenuComponent,
-    Global
+    Global,
+    PersoPipe,
+    PipeRound,
   ],
   imports: [
     BrowserModule,

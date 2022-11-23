@@ -4,11 +4,26 @@ import { AfterViewInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { animate, state, style, transition, trigger } from '@angular/animations'; //PER ANIMAR LA TAULA
 
 @Component({
     selector: 'aplicacio',
     styleUrls: ['./dades.css'],
     templateUrl: './dades.html',
+
+        // ANIMACIO TAULA
+    animations:[
+    trigger("animacioTaula", [
+        state('hidden', style({transform: 'translateY(100%)', opacity:0})),
+        state('shown', style({transform: 'translateY(0%)', opacity: 1})),
+        transition('hidden => shown', [animate('1s')]),
+      ]),
+    trigger("animacioHeader", [
+        state('hidden', style({transform: 'translateX(-50%)', opacity:0})),
+        state('shown', style({transform: 'translateX(0%)', opacity: 1})),
+        transition('hidden => shown', [animate('1s')]),
+      ]),
+    ]  
 })
 
 export class Array_json implements AfterViewInit {
@@ -40,11 +55,11 @@ export class Array_json implements AfterViewInit {
             a1.Pais = String(dades[y]["Country Name"]);
             a1["Població total"] = String(dades[y]["2020 [YR2020]"]);
             a1["Educació Primaria"] = String(dades[y + 1]["2020 [YR2020]"]);
-            a1["Creixement del PIB"] = String(dades[y + 2]["2020 [YR2020]"]);
+            a1["Creixement del PIB"] = String(dades[y + 2]["2020 [YR2020]"]).slice(0,5)+"%";
             a1["Taxa de natalitat"] = String(dades[y + 3]["2020 [YR2020]"]);
             a1["Taxa de mortalitat"] = String(dades[y + 4]["2020 [YR2020]"]);
             a1["Esperança de vida (anys)"] = String(dades[y + 5]["2020 [YR2020]"]);
-            a1["Ratio de pobresa (% població)"] = String(dades[y + 6]["2020 [YR2020]"]);
+            a1["Ratio de pobresa (% població)"] = String(dades[y + 6]["2020 [YR2020]"])+"%";
             // a1["Personal de les forces armades"] = String(dades[y + 7]["2020 [YR2020]"]);
             a1["Turisme (arribades)"] = String(dades[y + 8]["2020 [YR2020]"]);
             // a1["Migració neta"] = String(dades[y + 9]["2020 [YR2020]"]);
@@ -70,7 +85,11 @@ export class Array_json implements AfterViewInit {
     ngAfterViewInit() {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        setTimeout( () => {
+            this.state = 'shown';
+          }, 0);  
     }
+    state = 'hidden';
 }
 
 // export interface PeriodicElement {

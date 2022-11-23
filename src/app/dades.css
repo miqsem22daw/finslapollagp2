@@ -73,9 +73,10 @@ img{
 }
 
 body {
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  overflow: hidden;
 }
 /*
 .container-fluid{

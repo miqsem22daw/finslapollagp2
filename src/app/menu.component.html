@@ -11,6 +11,7 @@
     <a mat-button routerLink="/grafics" routerLinkActive="active">Gràfics</a>
   </mat-toolbar>
 
-  <h1>POBRESA MUNDIAL</h1>
-  <h2>Tot el que no veiem</h2>
+  <!-- <h1 *ngFor="let titol of dadaTitol" >{{ titol.n | spacing:titol.n}} </h1> -->
+  <h1 [@animacioBanner]="state">{{ megadada | spacing}} </h1>
+  <h2 [@animacioBanner]="state">Tot el que no veiem</h2>
 </body>

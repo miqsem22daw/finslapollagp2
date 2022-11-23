@@ -5,6 +5,8 @@ import { Array_json } from './array-json';
 import { MenuComponent } from './menu.component';
 import { BarChartComponent } from './grafics';
 
+
+
 const routes: Routes = [
   { path: '', redirectTo: 'menu', pathMatch: 'full'},
   { path: 'menu', component: MenuComponent},
